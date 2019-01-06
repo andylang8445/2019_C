@@ -1,3 +1,4 @@
 ﻿  main.cpp
-c:\users\119an\c_language\game_project\runn\project1\project1\main.cpp(18): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\119an\c_language\game_project\runn\project1\project1\main.cpp(19): warning C4838: 'int'에서 'SHORT'(으)로의 변환에는 축소 변환이 필요합니다.
+c:\users\119an\c_language\game_project\runn\project1\project1\main.cpp(69): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Project1.vcxproj -> C:\Users\119an\C_language\Game_Project\Runn\Project1\Debug\Project1.exe

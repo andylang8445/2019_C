@@ -4,6 +4,7 @@
 #include<conio.h>
 #include<string.h>
 #include<time.h>
+#include<math.h>
 #include<iostream>
 #define COL                   GetStdHandle(STD_OUTPUT_HANDLE)        // 콘솔창의 핸들정보 받기
 #define height 38
@@ -63,15 +64,23 @@ void run_game()
 }
 int main()
 {
-	int tmp;
+	int tmp, gpx, gpy;
 	int beep_l = 0, beep_r = 0, beep_u = 0, beep_d = 0;
+	srand(time(NULL));
 	system("mode con cols=60 lines=40");
 	system("title Run");
 	setup_seq();
 	gotoxy(Px, Py);
 	printf("$");
+	//----------generate_prize-----------//
+	gpx = (rand() % width - 2) + 1;
+	gpy = (rand() % height - 2) + 1;
+	map[gpy][gpx] = 2;
+	gotoxy(gpx, gpy);
+	printf("#");
 	while (1)
 	{
+		//-----Palyer Moving part-------//
 		if (_kbhit())
 		{
 			tmp = _getch();
@@ -147,11 +156,9 @@ int main()
 				if (tmp == 77)
 					goto right;
 			}
-
+		end:
 			gotoxy(Px, Py);
 			printf("$");
-		end:
-			continue;
 		}
 	}
 	_getch();
